@@ -1,5 +1,6 @@
 ﻿using LibraryClient.Models;
 using LibraryDomain.Models;
+using System;
 using System.Collections.Generic;
 
 namespace LibraryClient.Mapper
@@ -35,59 +36,79 @@ namespace LibraryClient.Mapper
 
         public static Book MapToBook(BookCardInfo bookCardInfo)
         {
+            if (bookCardInfo == null)
+            {
+                throw new ArgumentNullException(nameof(bookCardInfo));
+            }
+
             return new Book()
             {
                 Id = bookCardInfo.Id,
-                Title = bookCardInfo.Title,
+                Title = bookCardInfo.Title ?? "N/A",
                 DocumentType = bookCardInfo.DocumentType,
-                DatePublished = bookCardInfo.DatePublished,
-                ISBN = bookCardInfo.ISBN,
-                Authors = bookCardInfo.Authors,
+                DatePublished = bookCardInfo.DatePublished ?? "N/A",
+                ISBN = bookCardInfo.ISBN ?? "N/A",
+                Authors = bookCardInfo.Authors ?? new List<string>() { "N/A" },
                 NumberOfPages = bookCardInfo.NumberOfPages,
-                Publisher = bookCardInfo.Publisher,
+                Publisher = bookCardInfo.Publisher ?? "N/A",
             };
         }
 
         public static LocalizedBook MapToLocalizedBook(LocalizedBookCardInfo localizedBookCardInfo)
         {
+            if (localizedBookCardInfo == null)
+            {
+                throw new ArgumentNullException(nameof(localizedBookCardInfo));
+            }
+
             return new LocalizedBook()
             {
                 Id = localizedBookCardInfo.Id,
-                Title = localizedBookCardInfo.Title,
+                Title = localizedBookCardInfo.Title ?? "N/A",
                 DocumentType = localizedBookCardInfo.DocumentType,
-                DatePublished = localizedBookCardInfo.DatePublished,
-                ISBN = localizedBookCardInfo.ISBN,
-                Authors = localizedBookCardInfo.Authors,
+                DatePublished = localizedBookCardInfo.DatePublished ?? "N/A",
+                ISBN = localizedBookCardInfo.ISBN ?? "N/A",
+                Authors = localizedBookCardInfo.Authors ?? new List<string>() { "N/A" },
                 NumberOfPages = localizedBookCardInfo.NumberOfPages,
-                OriginalPublisher = localizedBookCardInfo.OriginalPublisher,
+                OriginalPublisher = localizedBookCardInfo.OriginalPublisher ?? "N/A",
                 CountryOfLocalization = localizedBookCardInfo.CountryOfLocalization,
-                LocalPublisher = localizedBookCardInfo.LocalPublisher,
+                LocalPublisher = localizedBookCardInfo.LocalPublisher ?? "N/A",
             };
         }
 
         public static Magazine MapToMagazine(MagazineCardInfo magazineCardInfo)
         {
+            if (magazineCardInfo == null)
+            {
+                throw new ArgumentNullException(nameof(magazineCardInfo));
+            }
+
             return new Magazine()
             {
                 Id = magazineCardInfo.Id,
-                Title = magazineCardInfo.Title,
+                Title = magazineCardInfo.Title ?? "N/A",
                 DocumentType = magazineCardInfo.DocumentType,
-                DatePublished = magazineCardInfo.DatePublished,
-                Publisher = magazineCardInfo.Publisher,
+                DatePublished = magazineCardInfo.DatePublished ?? "N/A",
+                Publisher = magazineCardInfo.Publisher ?? "N/A",
                 ReleaseNumber = magazineCardInfo.ReleaseNumber,
             };
         }
 
         public static Patent MapToPatent(PatentCardInfo patentCardInfo)
         {
+            if (patentCardInfo == null)
+            {
+                throw new ArgumentNullException(nameof(patentCardInfo));
+            }
+
             return new Patent()
             {
                 Id = patentCardInfo.Id,
-                Title = patentCardInfo.Title,
+                Title = patentCardInfo.Title ?? "N/A",
                 DocumentType = patentCardInfo.DocumentType,
-                DatePublished = patentCardInfo.DatePublished,
-                Authors = patentCardInfo.Authors,
-                ExpirationDate = patentCardInfo.ExpirationDate,
+                DatePublished = patentCardInfo.DatePublished ?? "N/A",
+                Authors = patentCardInfo.Authors ?? new List<string>() { "N/A" },
+                ExpirationDate = patentCardInfo.ExpirationDate ?? "N/A",
                 UniqueId = patentCardInfo.UniqueId,
             };
         }
