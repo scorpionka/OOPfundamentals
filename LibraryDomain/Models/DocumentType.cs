@@ -2,9 +2,9 @@
 {
     public enum DocumentType
     {
+        NotAvailable,
         Book,
         LocalizedBook,
-        Patent,
-        None
+        Patent
     }
 }

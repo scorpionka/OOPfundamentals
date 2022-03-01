@@ -20,7 +20,7 @@ namespace LibraryDomain.DomainServices
             return true;
         }
 
-        public List<Document> GetDocuments()
+        public IEnumerable<Document> GetDocuments()
         {
             return baseRepository.GetDocuments();
         }

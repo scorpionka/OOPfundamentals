@@ -2,6 +2,7 @@
 {
     public enum Country
     {
+        NotAvailable,
         Belarus,
         USA,
         Poland,
@@ -10,7 +11,6 @@
         Ukraine,
         Germany,
         France,
-        Russia,
-        None
+        Russia
     }
 }

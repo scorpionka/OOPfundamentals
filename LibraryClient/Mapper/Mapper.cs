@@ -6,7 +6,7 @@ namespace LibraryClient.Mapper
 {
     public static class Mapper
     {
-        public static List<DocumentCardInfo> MapToDocumentCardInfoList(List<Document> documents)
+        public static IEnumerable<DocumentCardInfo> MapToDocumentCardInfoList(IEnumerable<Document> documents)
         {
             var documentsCardInfos = new List<DocumentCardInfo>();
 
@@ -15,17 +15,17 @@ namespace LibraryClient.Mapper
                 var cardInfo = new DocumentCardInfo()
                 {
                     Id = document.Id,
-                    Title = document.Title != null ? document.Title : "N/A",
+                    Title = document.Title ?? "N/A",
                     DocumentType = document.DocumentType,
-                    DatePublished = document.DatePublished,
-                    ISBN = document.ISBN != null ? document.ISBN : "N/A",
-                    Authors = document.Authors != null ? document.Authors : new List<string>() { "N/A"},
+                    DatePublished = document.DatePublished ?? "N/A",
+                    ISBN = document.ISBN ?? "N/A",
+                    Authors = document.Authors ?? new List<string>() { "N/A" },
                     NumberOfPages = document.NumberOfPages,
-                    Publisher = document.Publisher != null ? document.Publisher : "N/A",
-                    OriginalPublisher = document.OriginalPublisher != null ? document.OriginalPublisher : "N/A",
+                    Publisher = document.Publisher ?? "N/A",
+                    OriginalPublisher = document.OriginalPublisher ?? "N/A",
                     CountryOfLocalization = document.CountryOfLocalization,
-                    LocalPublisher = document.LocalPublisher != null ? document.LocalPublisher : "N/A",
-                    ExpirationDate = document.ExpirationDate,
+                    LocalPublisher = document.LocalPublisher ?? "N/A",
+                    ExpirationDate = document.ExpirationDate ?? "N/A",
                 };
                 documentsCardInfos.Add(cardInfo);
             }

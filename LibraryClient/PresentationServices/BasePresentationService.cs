@@ -19,7 +19,7 @@ namespace LibraryClient.PresentationServices
             return baseDomainService.AddDocument(Mapper.Mapper.MapToDocument(documentCardInfo));
         }
 
-        public List<DocumentCardInfo> GetDocumentCardInfos()
+        public IEnumerable<DocumentCardInfo> GetDocumentCardInfos()
         {
             var documents = baseDomainService.GetDocuments();
             return Mapper.Mapper.MapToDocumentCardInfoList(documents);
