@@ -14,11 +14,6 @@ namespace LibraryClient.PresentationServices
             this.baseDomainService = baseDomainService;
         }
 
-        public bool AddDocumentCardInfo(DocumentCardInfo documentCardInfo)
-        {
-            return baseDomainService.AddDocument(Mapper.Mapper.MapToDocument(documentCardInfo));
-        }
-
         public IEnumerable<DocumentCardInfo> GetDocumentCardInfos()
         {
             var documents = baseDomainService.GetDocuments();

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace LibraryDomain.Models
+﻿namespace LibraryDomain.Models
 {
     public class Document
     {
@@ -8,13 +6,5 @@ namespace LibraryDomain.Models
         public DocumentType DocumentType { get; set; }
         public string Title { get; set; }
         public string DatePublished { get; set; }
-        public string ISBN { get; set; }
-        public List<string> Authors { get; set; }
-        public int NumberOfPages { get; set; }
-        public string Publisher { get; set; }
-        public string OriginalPublisher { get; set; }
-        public Country CountryOfLocalization { get; set; }
-        public string LocalPublisher { get; set; }
-        public string ExpirationDate { get; set; }
     }
 }

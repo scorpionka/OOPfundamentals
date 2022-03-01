@@ -6,6 +6,5 @@ namespace LibraryClient.PresentationServices.Interfaces
     public interface IBasePresentationService
     {
         public IEnumerable<DocumentCardInfo> GetDocumentCardInfos();
-        public bool AddDocumentCardInfo(DocumentCardInfo documentCardInfo);
     }
 }

@@ -5,6 +5,7 @@
         NotAvailable,
         Book,
         LocalizedBook,
-        Patent
+        Patent,
+        Magazine
     }
 }

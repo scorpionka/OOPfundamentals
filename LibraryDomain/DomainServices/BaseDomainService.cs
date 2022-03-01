@@ -14,12 +14,6 @@ namespace LibraryDomain.DomainServices
             this.baseRepository = baseRepository;
         }
 
-        public bool AddDocument(Document document)
-        {
-            baseRepository.AddDocument(document);
-            return true;
-        }
-
         public IEnumerable<Document> GetDocuments()
         {
             return baseRepository.GetDocuments();

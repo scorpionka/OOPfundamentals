@@ -26,6 +26,18 @@ namespace LibraryClient
                     services.AddTransient<IBasePresentationService, BasePresentationService>();
                     services.AddTransient<IBaseDomainService, BaseDomainService>();
                     services.AddTransient<IBaseRepository, BaseFileSystemRepository>();
+                    services.AddTransient<IBookPresentationService, BookPresentationService>();
+                    services.AddTransient<IBookDomainService, BookDomainService>();
+                    services.AddTransient<IBookRepository, BookFileSystemRepository>();
+                    services.AddTransient<ILocalizedBookPresentationService, LocalizedBookPresentationService>();
+                    services.AddTransient<ILocalizedBookDomainService, LocalizedBookDomainService>();
+                    services.AddTransient<ILocalizedBookRepository, LocalizedBookFileSystemRepository>();
+                    services.AddTransient<IMagazinePresentationService, MagazinePresentationService>();
+                    services.AddTransient<IMagazineDomainService, MagazineDomainService>();
+                    services.AddTransient<IMagazineRepository, MagazineFileSystemRepository>();
+                    services.AddTransient<IPatentPresentationService, PatentPresentationService>();
+                    services.AddTransient<IPatentDomainService, PatentDomainService>();
+                    services.AddTransient<IPatentRepository, PatentFileSystemRepository>();
                 });
         }
     }
