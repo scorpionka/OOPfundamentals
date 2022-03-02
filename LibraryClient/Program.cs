@@ -123,6 +123,11 @@ namespace LibraryClient
             var listOfCardInfo3 = basePresentationService.GetDocumentCardInfos(3);
             var listOfCardInfo4 = basePresentationService.GetDocumentCardInfos(4);
             var listOfCardInfo5 = basePresentationService.GetDocumentCardInfos(5);
+            var listOfCardInfo6 = basePresentationService.GetDocumentCardInfos(1);
+            var listOfCardInfo7 = basePresentationService.GetDocumentCardInfos(2);
+            var listOfCardInfo8 = basePresentationService.GetDocumentCardInfos(3);
+            var listOfCardInfo9 = basePresentationService.GetDocumentCardInfos(4);
+            var listOfCardInfo10 = basePresentationService.GetDocumentCardInfos(5);
         }
     }
 }
