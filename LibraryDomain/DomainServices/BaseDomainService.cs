@@ -14,9 +14,9 @@ namespace LibraryDomain.DomainServices
             this.baseRepository = baseRepository;
         }
 
-        public IEnumerable<Document> GetDocuments()
+        public IEnumerable<Document> GetDocuments(int id)
         {
-            return baseRepository.GetDocuments();
+            return baseRepository.GetDocuments(id);
         }
     }
 }

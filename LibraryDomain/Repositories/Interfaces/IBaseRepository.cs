@@ -5,6 +5,6 @@ namespace LibraryDomain.Repositories.Interfaces
 {
     public interface IBaseRepository
     {
-        public IEnumerable<Document> GetDocuments();
+        public IEnumerable<Document> GetDocuments(int id);
     }
 }

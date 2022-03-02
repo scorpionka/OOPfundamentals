@@ -13,22 +13,70 @@ namespace LibraryClient.Mapper
 
             foreach (var document in documents)
             {
-                var cardInfo = new DocumentCardInfo()
+                switch (document.DocumentType)
                 {
-                    //Id = document.Id,
-                    //Title = document.Title ?? "N/A",
-                    //DocumentType = document.DocumentType,
-                    //DatePublished = document.DatePublished ?? "N/A",
-                    //ISBN = document.ISBN ?? "N/A",
-                    //Authors = document.Authors ?? new List<string>() { "N/A" },
-                    //NumberOfPages = document.NumberOfPages,
-                    //Publisher = document.Publisher ?? "N/A",
-                    //OriginalPublisher = document.OriginalPublisher ?? "N/A",
-                    //CountryOfLocalization = document.CountryOfLocalization,
-                    //LocalPublisher = document.LocalPublisher ?? "N/A",
-                    //ExpirationDate = document.ExpirationDate ?? "N/A",
-                };
-                documentsCardInfos.Add(cardInfo);
+                    case DocumentType.Book:
+                        var book = document as Book;
+                        var bookCardInfo = new BookCardInfo()
+                        {
+                            Id = book.Id,
+                            Title = book.Title,
+                            DocumentType = book.DocumentType,
+                            DatePublished = book.DatePublished,
+                            ISBN = book.ISBN,
+                            Authors = book.Authors,
+                            NumberOfPages = book.NumberOfPages,
+                            Publisher = book.Publisher,
+                        };
+                        documentsCardInfos.Add(bookCardInfo);
+                        break;
+                    case DocumentType.LocalizedBook:
+                        var localizedBook = document as LocalizedBook;
+                        var localizedBookCardInfo = new LocalizedBookCardInfo()
+                        {
+                            Id = localizedBook.Id,
+                            Title = localizedBook.Title,
+                            DocumentType = localizedBook.DocumentType,
+                            DatePublished = localizedBook.DatePublished,
+                            ISBN = localizedBook.ISBN,
+                            Authors = localizedBook.Authors,
+                            NumberOfPages = localizedBook.NumberOfPages,
+                            OriginalPublisher = localizedBook.OriginalPublisher,
+                            CountryOfLocalization = localizedBook.CountryOfLocalization,
+                            LocalPublisher = localizedBook.LocalPublisher,
+                        };
+                        documentsCardInfos.Add(localizedBookCardInfo);
+                        break;
+                    case DocumentType.Magazine:
+                        var magazine = document as Magazine;
+                        var magazineCardInfo = new MagazineCardInfo()
+                        {
+                            Id = magazine.Id,
+                            Title = magazine.Title,
+                            DocumentType = magazine.DocumentType,
+                            DatePublished = magazine.DatePublished,
+                            Publisher = magazine.Publisher,
+                            ReleaseNumber = magazine.ReleaseNumber,
+                        };
+                        documentsCardInfos.Add(magazineCardInfo);
+                        break;
+                    case DocumentType.Patent:
+                        var patent = document as Patent;
+                        var patentCardInfo = new PatentCardInfo()
+                        {
+                            Id = patent.Id,
+                            Title = patent.Title,
+                            DocumentType = patent.DocumentType,
+                            DatePublished = patent.DatePublished,
+                            Authors = patent.Authors,
+                            ExpirationDate = patent.ExpirationDate,
+                            UniqueId = patent.UniqueId,
+                        };
+                        documentsCardInfos.Add(patentCardInfo);
+                        break;
+                    default:
+                        break;
+                }
             }
 
             return documentsCardInfos;

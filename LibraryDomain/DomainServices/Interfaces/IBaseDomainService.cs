@@ -5,6 +5,6 @@ namespace LibraryDomain.DomainServices.Interfaces
 {
     public interface IBaseDomainService
     {
-        public IEnumerable<Document> GetDocuments();
+        public IEnumerable<Document> GetDocuments(int id);
     }
 }

@@ -14,9 +14,9 @@ namespace LibraryClient.PresentationServices
             this.baseDomainService = baseDomainService;
         }
 
-        public IEnumerable<DocumentCardInfo> GetDocumentCardInfos()
+        public IEnumerable<DocumentCardInfo> GetDocumentCardInfos(int id)
         {
-            var documents = baseDomainService.GetDocuments();
+            var documents = baseDomainService.GetDocuments(id);
             return Mapper.Mapper.MapToDocumentCardInfoList(documents);
         }
     }

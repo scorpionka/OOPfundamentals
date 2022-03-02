@@ -1,6 +1,4 @@
-﻿using LibraryDomain.Models;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 
 namespace LibraryData.Serializers
@@ -20,11 +18,10 @@ namespace LibraryData.Serializers
             File.WriteAllText(path, jsonString);
         }
 
-        public static IEnumerable<Document> DeserializeLibrary()
+        public static T DeserializeDocument(string fileName)
         {
-            string fileName = "library.json";
             string jsonString = File.ReadAllText(fileName);
-            return JsonSerializer.Deserialize<List<Document>>(jsonString);
+            return JsonSerializer.Deserialize<T>(jsonString);
         }
     }
 }

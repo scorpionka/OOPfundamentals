@@ -50,6 +50,20 @@ namespace LibraryClient
 
             bookPresentationService.AddBookCardInfo(bookCardInfo);
 
+            var bookCardInfo1 = new BookCardInfo()
+            {
+                Id = 3,
+                Title = "World War II",
+                DocumentType = DocumentType.Book,
+                DatePublished = new DateTime(1995, 9, 17).ToString("yyyy-MM-dd"),
+                ISBN = "1546-8-7911",
+                Authors = new List<string>() { "Winston Churchill" },
+                NumberOfPages = 1500,
+                Publisher = "London Publishing Office",
+            };
+
+            bookPresentationService.AddBookCardInfo(bookCardInfo1);
+
             var localizedBookCardInfo = new LocalizedBookCardInfo()
             {
                 Id = 2,
@@ -79,6 +93,19 @@ namespace LibraryClient
 
             patentPresentationService.AddPatentCardInfo(patentCardInfo);
 
+            var patentCardInfo1 = new PatentCardInfo()
+            {
+                Id = 4,
+                Title = "Fire",
+                DocumentType = DocumentType.Patent,
+                DatePublished = new DateTime(1999, 11, 11).ToString("yyyy-MM-dd"),
+                Authors = new List<string>() { "Human" },
+                ExpirationDate = new DateTime(7000, 1, 1).ToString("yyyy-MM-dd"),
+                UniqueId = 2000,
+            };
+
+            patentPresentationService.AddPatentCardInfo(patentCardInfo1);
+
             var magazineCardInfo = new MagazineCardInfo()
             {
                 Id = 4,
@@ -91,27 +118,11 @@ namespace LibraryClient
 
             magazinePresentationService.AddMagazineCardInfo(magazineCardInfo);
 
-            //var listOfCardInfo = basePresentationService.GetDocumentCardInfos();
-
-            //foreach (var cardInfo in listOfCardInfo)
-            //{
-            //    Console.WriteLine($"Id: {cardInfo.Id}");
-            //    Console.WriteLine($"Type: {cardInfo.DocumentType}");
-            //    Console.WriteLine($"Title: {cardInfo.Title}");
-            //    Console.WriteLine($"ISBN: {cardInfo.ISBN}");
-            //    Console.WriteLine($"Date published: {cardInfo.DatePublished}");
-            //    foreach (var author in cardInfo.Authors)
-            //    {
-            //        Console.WriteLine("Authors:");
-            //        Console.WriteLine(author);
-            //    }
-            //    Console.WriteLine($"Number of pages: {cardInfo.NumberOfPages}");
-            //    Console.WriteLine($"Publisher: {cardInfo.Publisher}");
-            //    Console.WriteLine($"Local publisher: {cardInfo.LocalPublisher}");
-            //    Console.WriteLine($"Original publisher: {cardInfo.OriginalPublisher}");
-            //    Console.WriteLine($"Country of localization: {cardInfo.CountryOfLocalization}");
-            //    Console.WriteLine($"Expiration date: {cardInfo.ExpirationDate}");
-            //}
+            var listOfCardInfo1 = basePresentationService.GetDocumentCardInfos(1);
+            var listOfCardInfo2 = basePresentationService.GetDocumentCardInfos(2);
+            var listOfCardInfo3 = basePresentationService.GetDocumentCardInfos(3);
+            var listOfCardInfo4 = basePresentationService.GetDocumentCardInfos(4);
+            var listOfCardInfo5 = basePresentationService.GetDocumentCardInfos(5);
         }
     }
 }
